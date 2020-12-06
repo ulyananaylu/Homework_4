@@ -1,11 +1,11 @@
 function [y, t, d] = Richardson(method, t0, y0, tn, A)
-    if method == "AdamsExtra2"
+    if method == "Adams3"
         h = 1/(max(abs(eig(A))));
         order = 2;
     elseif method == "RungeKutta"
         h = 2.78/(max(abs(eig(A))));
         order = 4;
-    elseif method == "EulerReverse"
+    elseif method == "BackwardEuler"
         h = 1e-3;
         order = 2;
     end
