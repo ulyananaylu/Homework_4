@@ -11,8 +11,8 @@ function [y, lambda] = ScalarProduct(A, eps)
     
     while inaccuracy > eps 
         y = (A * y) / norm(A * y);
-        lambda = (y' * A * y)/(y' * y);
-        inaccuracy = norm(A*y - lambda * y)/norm(y);
+         inaccuracy = abs(lambda-(y' * A * y)/(y' * y));
+       lambda = (y' * A * y)/(y' * y);
         iteration = iteration + 1;
     end
     
